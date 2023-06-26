@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-django-app-pod
+  namespace: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-app
+  template:
+    metadata:
+      labels:
+        app: django-app
+    spec:
+      containers:
+      - name: django-app
+        image: simple-django-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        env:
+          - name: MONGO_USER
+            value: mongodbadmin
+          - name: MONGO_PASS
+            value: secret
+          - name: MONGO_URL
+            value: mongo-pod
+            

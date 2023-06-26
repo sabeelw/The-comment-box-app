@@ -1,0 +1,23 @@
+# Ignore files and directories commonly excluded in Django projects
+*.pyc
+__pycache__
+*.egg-info/
+*.egg
+.git
+.idea
+.vscode
+*.log
+
+# Ignore files and directories specific to this project
+node_modules/
+staticfiles/
+media/
+*.sqlite3
+.env/
+prepare-app.sh
+stop-app.sh
+start-app.sh
+Dockerfile
+deployment.yaml
+service.yaml
+statefulset.yaml
